@@ -1,0 +1,153 @@
+#info {
+  position: absolute;
+  white-space: pre;
+  top: 20;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 100px;
+  margin: auto;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: #eff6d3;
+  background-image: linear-gradient(-90deg, #255F3A, #26255F);
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 20;
+  bottom: 10;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.play-button {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.play-button input[type=checkbox] {
+  display: none;
+}
+.play-button input[type=checkbox]:checked ~ span::before, .play-button input[type=checkbox]:checked ~ span::after {
+  border: 20px solid transparent;
+  border-left: 40px solid #fff;
+  border-right: 0;
+}
+.play-button input[type=checkbox]:checked ~ span::after {
+  transform: translateY(-50%) scaleY(0.5);
+}
+.play-button span {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+.play-button span::before, .play-button span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  border: 0 solid transparent;
+  border-left: 16px solid #fff;
+  transition: all 0.4s ease;
+}
+.play-button span::before {
+  left: 0;
+}
+.play-button span::after {
+  right: 0;
+}
+
+
+/* -------------- */
+
+.next-box {
+  position: absolute;
+  top: 0;
+  right: 20;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+
+.btn-arrow {
+    color: transparent;
+    display: block;
+    margin: 3rem;
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+
+    background-color: rgba(black, .05);
+
+    transition: all 150ms ease-out;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+            top: 0;
+            left: 0;
+
+        background-color: #606060;
+        
+        transition: all 150ms ease-out;
+    }
+
+    &::before {
+        width: 75%;
+        height: 25%;
+    }
+
+    &::after {
+        width: 25%;
+        height: 75%;
+    }
+
+    &:hover, &:focus {
+        background-color: rgba(black, .1);
+        
+        &::before,
+        &::after {
+            background-color: #404040;
+        }
+    }
+
+    &.btn-arrow-right {
+        &::before,
+        &::after {
+            top: 12.5%;
+            left: 12.5%;
+        }
+    }
+
+    &.btn-arrow-right {
+        transform: rotate(135deg);
+    }
+}
